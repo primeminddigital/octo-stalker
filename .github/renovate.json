@@ -4,9 +4,11 @@
   "packageRules": [
     {
       "updateTypes": ["minor", "patch", "pin", "digest"],
-      "excludePackagePatterns": ["^@angular", "typescript"],
+      "excludePackagePatterns": ["typescript"],
+      "stabilityDays": 1,
       "automerge": true
     }
   ],
-  "rangeStrategy": "bump"
+  "requiredStatusChecks": null,
+  "prHourlyLimit": 10
 }
