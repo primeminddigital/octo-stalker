@@ -5,10 +5,10 @@
     {
       "updateTypes": ["minor", "patch", "pin", "digest"],
       "excludePackagePatterns": ["typescript"],
-      "stabilityDays": 1,
       "automerge": true
     }
   ],
+  "stabilityDays": 1,
   "requiredStatusChecks": null,
   "prHourlyLimit": 10
 }
