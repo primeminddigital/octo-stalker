@@ -9,6 +9,5 @@
     }
   ],
   "stabilityDays": 1,
-  "requiredStatusChecks": null,
   "prHourlyLimit": 10
 }
