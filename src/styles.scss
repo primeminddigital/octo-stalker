@@ -2,6 +2,10 @@ a {
   text-decoration: none;
 }
 
+.\!m-0 {
+  margin: 0 !important;
+}
+
 .flex {
   display: flex !important;
   flex-wrap: wrap;
@@ -62,4 +66,8 @@ a {
 
 .align-self-center {
   align-self: center;
+}
+
+.mat-mdc-list-item-meta {
+  color: inherit;
 }
