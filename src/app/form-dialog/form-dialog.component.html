@@ -6,7 +6,7 @@
     #f="ngForm" (ngSubmit)="dialog.close(f.value)">
   <ng-container *ngFor="let field of data.fields">
     <ng-container [ngSwitch]="field.type">
-      <mat-form-field *ngSwitchCase="'select'" appearance="standard">
+      <mat-form-field *ngSwitchCase="'select'">
         <mat-label>{{field.label || field.name}}</mat-label>
         <mat-select
             [ngModel]="field.default"
@@ -20,7 +20,7 @@
         </mat-select>
       </mat-form-field>
 
-      <mat-form-field *ngSwitchDefault appearance="standard">
+      <mat-form-field *ngSwitchDefault>
         <mat-label>{{field.label || field.name}}</mat-label>
         <input matInput
             autocomplete="off"

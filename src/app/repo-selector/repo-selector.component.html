@@ -1,5 +1,5 @@
 <div class="flex gap cross-start" [ngClass]="{'hide-repos': !showRepos}">
-  <mat-card *ngFor="let repoGroup of _repos | keyvalue" [style.margin-bottom.em]="1">
+  <mat-card appearance="outlined" *ngFor="let repoGroup of _repos | keyvalue" [style.margin-bottom.em]="1">
     <mat-card-title>
       <a href="https://github.com/{{ repoGroup.key }}" target="_blank">{{ repoGroup.key }}</a>
     </mat-card-title>

@@ -1,6 +1,6 @@
 import {Component, Input, OnChanges, SimpleChanges, ViewChild, TemplateRef} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {MatLegacyDialog as MatDialog} from '@angular/material/legacy-dialog';
+import {MatDialog} from '@angular/material/dialog';
 
 import {Observable, from} from 'rxjs';
 import {map, mergeAll, toArray, tap} from 'rxjs/operators';

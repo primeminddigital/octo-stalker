@@ -10,16 +10,12 @@ a:visited {
   color: inherit;
 }
 
-.mat-list {
-  margin: 0 -24px 0 -16px;
-}
-
 .card-count {
   display: none;
 }
 
 .hide-repos {
-  .mat-card {
+  .mat-mdc-card {
     display: none;
   }
 

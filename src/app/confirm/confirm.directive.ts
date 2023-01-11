@@ -5,7 +5,7 @@ import {
   Input,
   TemplateRef,
 } from '@angular/core';
-import {MatLegacyDialog as MatDialog} from '@angular/material/legacy-dialog';
+import {MatDialog} from '@angular/material/dialog';
 import {ConfirmDialogComponent} from './confirm-dialog/confirm-dialog.component';
 
 @Directive({
