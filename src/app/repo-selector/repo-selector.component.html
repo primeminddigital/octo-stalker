@@ -18,7 +18,7 @@
         >
           {{ repoName }}
         </a>
-        <div matListItemMeta>
+        <div matListItemMeta class="!text-inherit">
           <a class="count" href="https://github.com/{{ repoGroup.key }}/{{ repoName }}/issues">
             <mat-icon>info</mat-icon>
             {{ repoInfo[repoGroup.key][repoName]?.issues?.totalCount }}
