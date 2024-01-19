@@ -1,4 +1,12 @@
-import {Component, Input, OnChanges, SimpleChanges, ViewChild, TemplateRef} from '@angular/core';
+import {
+  Component,
+  Input,
+  OnChanges,
+  SimpleChanges,
+  ViewChild,
+  TemplateRef,
+  inject,
+} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {MatDialog} from '@angular/material/dialog';
 
@@ -28,7 +36,8 @@ export class RecentComponent implements OnChanges {
 
   groups: Observable<{[dayDiff: number]: {[repo: string]: object[]}}>;
 
-  constructor(private http: HttpClient, private dialog: MatDialog) {}
+  #http = inject(HttpClient);
+  #dialog = inject(MatDialog);
 
   ngOnChanges(_changes: SimpleChanges) {
     this.load();
@@ -39,10 +48,9 @@ export class RecentComponent implements OnChanges {
 
     this.groups = from(
       this.repos.map(repo =>
-        this.http.get(`https://api.github.com/repos/${repo}/commits?since=${since}`).pipe(
-          tap(
-            () => {},
-            error => {
+        this.#http.get(`https://api.github.com/repos/${repo}/commits?since=${since}`).pipe(
+          tap({
+            error: error => {
               let template: TemplateRef<any>;
               switch (error.status) {
                 case 403:
@@ -55,7 +63,7 @@ export class RecentComponent implements OnChanges {
                   template = this.rateLimitErrorTemplate;
               }
 
-              this.dialog
+              this.#dialog
                 .open(ConfirmDialogComponent, {
                   data: {
                     template,
@@ -69,7 +77,7 @@ export class RecentComponent implements OnChanges {
                   }
                 });
             },
-          ),
+          }),
           map((commits: any[]) => ({repo, commits})),
         ),
       ),
