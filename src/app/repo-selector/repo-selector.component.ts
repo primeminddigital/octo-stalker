@@ -41,7 +41,10 @@ export class RepoSelectorComponent implements OnInit {
     localStorage.setItem('showRepos', JSON.stringify(v));
   }
 
-  constructor(private dialog: MatDialog, private http: HttpClient) {}
+  constructor(
+    private dialog: MatDialog,
+    private http: HttpClient,
+  ) {}
 
   ngOnInit() {
     this._showRepos = JSON.parse(localStorage.getItem('showRepos') || 'true');
