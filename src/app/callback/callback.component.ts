@@ -5,6 +5,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 @Component({
   selector: 'gs-callback',
   templateUrl: './callback.component.html',
+  standalone: false,
 })
 export class CallbackComponent {
   constructor(client: HttpClient, route: ActivatedRoute, router: Router) {

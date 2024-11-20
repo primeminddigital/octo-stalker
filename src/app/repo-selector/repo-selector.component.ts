@@ -25,6 +25,7 @@ const InitRepos: Repos = {
   selector: 'repo-selector',
   templateUrl: './repo-selector.component.html',
   styleUrls: ['./repo-selector.component.scss'],
+  standalone: false,
 })
 export class RepoSelectorComponent implements OnInit {
   _repos: Repos = InitRepos;

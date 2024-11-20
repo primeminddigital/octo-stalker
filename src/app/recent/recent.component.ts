@@ -23,6 +23,7 @@ const GitHubAppOAuthURL = 'https://github.com/login/oauth/authorize?client_id=bb
   selector: 'recent',
   templateUrl: './recent.component.html',
   styleUrls: ['./recent.component.css'],
+  standalone: false,
 })
 export class RecentComponent implements OnChanges {
   @Input() repos: string[];

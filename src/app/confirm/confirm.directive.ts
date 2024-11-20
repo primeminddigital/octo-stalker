@@ -1,10 +1,4 @@
-import {
-  Directive,
-  Output,
-  EventEmitter,
-  Input,
-  TemplateRef,
-} from '@angular/core';
+import {Directive, Output, EventEmitter, Input, TemplateRef} from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 import {ConfirmDialogComponent} from './confirm-dialog/confirm-dialog.component';
 
@@ -13,6 +7,7 @@ import {ConfirmDialogComponent} from './confirm-dialog/confirm-dialog.component'
   host: {
     '(click)': 'handleClick($event)',
   },
+  standalone: false,
 })
 export class ConfirmDirective {
   @Input() confirmContext: any = {};

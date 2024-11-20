@@ -4,6 +4,7 @@ import {formatDistanceToNow, parseISO} from 'date-fns';
 
 @Pipe({
   name: 'ago',
+  standalone: false,
 })
 export class AgoPipe implements PipeTransform {
   transform(value: string, args?: any): any {

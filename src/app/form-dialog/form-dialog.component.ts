@@ -12,18 +12,19 @@ export type Field = {
   required?: boolean;
   disabled?: boolean;
   readonly?: boolean;
-}
+};
 
 export type TemplateData = {
   title: string;
   fields: Field[];
   submitText?: string;
   cancelText?: string;
-}
+};
 
 @Component({
   selector: 'form-dialog',
   templateUrl: './form-dialog.component.html',
+  standalone: false,
 })
 export class FormDialogComponent {
   constructor(
