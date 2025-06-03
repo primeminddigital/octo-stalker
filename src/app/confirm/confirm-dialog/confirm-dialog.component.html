@@ -1,6 +1,8 @@
-<h3 mat-dialog-title *ngIf="data.context.title">
-  {{ data.context.title }}
-</h3>
+@if (data.context.title) {
+  <h3 mat-dialog-title>
+    {{ data.context.title }}
+  </h3>
+}
 
 <ng-container *ngTemplateOutlet="data.template; context: data.context"></ng-container>
 

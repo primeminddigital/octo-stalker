@@ -5,18 +5,20 @@
   </a>
 </h2>
 <mat-list>
-  <mat-list-item *ngFor="let entry of repoCommits.value">
-    <img matListItemAvatar src="{{ entry.data.author?.avatar_url }}&s=48" alt="Avatar-Missing" />
-    <span matListItemTitle>
-      <a href="{{ entry.data.html_url }}" target="_blank" rel="noopener">
-        <span>{{ entry.data.commit.message }}</span>
-      </a>
-    </span>
-    <span matListItemLine>
-      <a href="https://github.com/{{ entry.data.author?.login }}" target="_blank">
-        <i>{{ entry.data.commit.author.name }} &#64;{{ entry.data.author?.login }}</i>
-      </a>
-      <small> ({{ entry.data.commit.committer.date | ago }})</small>
-    </span>
-  </mat-list-item>
+  @for (entry of repoCommits.value; track entry) {
+    <mat-list-item>
+      <img matListItemAvatar src="{{ entry.data.author?.avatar_url }}&s=48" alt="Avatar-Missing" />
+      <span matListItemTitle>
+        <a href="{{ entry.data.html_url }}" target="_blank" rel="noopener">
+          <span>{{ entry.data.commit.message }}</span>
+        </a>
+      </span>
+      <span matListItemLine>
+        <a href="https://github.com/{{ entry.data.author?.login }}" target="_blank">
+          <i>{{ entry.data.commit.author.name }} &#64;{{ entry.data.author?.login }}</i>
+        </a>
+        <small> ({{ entry.data.commit.committer.date | ago }})</small>
+      </span>
+    </mat-list-item>
+  }
 </mat-list>

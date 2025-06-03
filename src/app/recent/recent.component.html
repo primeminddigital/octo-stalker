@@ -1,11 +1,14 @@
-<div *ngFor="let groupByDayDiff of groups | async | keyvalue">
-  <h1>{{ groupByDayDiff.key }} days ago</h1>
-  <recent-repo
-    *ngFor="let groupByRepo of groupByDayDiff.value | keyvalue"
-    [repoCommits]="groupByRepo"
-  >
-  </recent-repo>
-</div>
+@for (groupByDayDiff of groups | async | keyvalue; track groupByDayDiff) {
+  <div>
+    <h1>{{ groupByDayDiff.key }} days ago</h1>
+    @for (groupByRepo of groupByDayDiff.value | keyvalue; track groupByRepo) {
+      <recent-repo
+        [repoCommits]="groupByRepo"
+        >
+      </recent-repo>
+    }
+  </div>
+}
 
 <ng-template #rateLimitError>
   You have hit unauthenticated rate limit of GitHub API. Try OAuth?
