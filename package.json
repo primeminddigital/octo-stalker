@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "@angular/build": "^20.0.0",
-    "@angular/cli": "20.0.5",
+    "@angular/cli": "20.1.0",
     "@angular/compiler-cli": "20.1.0",
     "@angular/language-service": "20.1.0",
     "@types/lodash-es": "~4.17.12",
