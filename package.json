@@ -33,7 +33,7 @@
     "@angular/compiler-cli": "20.3.2",
     "@angular/language-service": "20.3.2",
     "@types/lodash-es": "~4.17.12",
-    "@types/node": "~24.5.0",
+    "@types/node": "~24.6.0",
     "ts-node": "~10.9.2",
     "typescript": "~5.9.2",
     "wrangler": "^4.31.0"
