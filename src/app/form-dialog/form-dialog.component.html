@@ -4,7 +4,7 @@
   </h2>
 }
 
-<form id="form-dialog-form" class="flex column" #f="ngForm" (ngSubmit)="dialog.close(f.value)">
+<form id="form-dialog-form" class="column flex" #f="ngForm" (ngSubmit)="dialog.close(f.value)">
   @for (field of data.fields; track field) {
     @switch (field.type) {
       @case ('select') {
@@ -16,7 +16,7 @@
             [required]="field.required"
             [disabled]="field.disabled"
             [placeholder]="field.placeholder"
-            >
+          >
             @for (option of field.options; track option) {
               <mat-option [value]="option.value">
                 {{ option.label }}
@@ -38,7 +38,7 @@
             [readonly]="field.readonly"
             [disabled]="field.disabled"
             [placeholder]="field.placeholder"
-            />
+          />
         </mat-form-field>
       }
     }
@@ -52,7 +52,7 @@
     mat-button
     color="primary"
     [disabled]="f.invalid || f.pristine"
-    >
+  >
     {{ data.submitText || 'Submit' }}
   </button>
   <button mat-button matDialogClose>

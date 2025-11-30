@@ -1,9 +1,6 @@
-<div class="flex gap cross-start" [ngClass]="{'hide-repos': !showRepos}">
+<div class="gap cross-start flex" [ngClass]="{'hide-repos': !showRepos}">
   @for (repoGroup of _repos | keyvalue; track repoGroup) {
-    <mat-card
-      appearance="outlined"
-      [style.margin-bottom.em]="1"
-      >
+    <mat-card appearance="outlined" [style.margin-bottom.em]="1">
       <mat-card-header>
         <mat-card-title>
           <a href="https://github.com/{{ repoGroup.key }}" target="_blank">{{ repoGroup.key }}</a>
@@ -16,7 +13,7 @@
               matListItemTitle
               href="https://github.com/{{ repoGroup.key }}/{{ repoName }}"
               target="_blank"
-              >
+            >
               {{ repoName }}
             </a>
             <div matListItemMeta class="!text-inherit">
@@ -34,7 +31,7 @@
                 (confirm)="deleteRepo(repoGroup.value, repoName)"
                 [confirmContext]="{$implicit: repoName}"
                 [confirmTemplate]="confirmDelete"
-                >
+              >
                 <mat-icon>clear</mat-icon>
               </button>
             </div>
@@ -49,7 +46,7 @@
           (confirm)="deleteCard(_repos, repoGroup.key)"
           [confirmContext]="{$implicit: repoGroup.key}"
           [confirmTemplate]="confirmDelete"
-          >
+        >
           -Card
         </button>
       </mat-card-actions>
@@ -57,14 +54,10 @@
   }
   <button mat-raised-button color="primary" (click)="addCard(_repos)">+User/Org</button>
   @if (showRepos) {
-    <button mat-button color="primary" (click)="showRepos = false">
-      Hide Cards
-    </button>
+    <button mat-button color="primary" (click)="showRepos = false">Hide Cards</button>
   }
   @if (!showRepos) {
-    <button mat-button color="primary" (click)="showRepos = true">
-      Show Cards
-    </button>
+    <button mat-button color="primary" (click)="showRepos = true">Show Cards</button>
   }
   <span class="card-count align-self-center">{{ repos.value.length }} Repos</span>
   <button mat-button color="primary" (click)="export()">
