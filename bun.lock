@@ -17,7 +17,7 @@
         "@angular/router": "21.2.6",
         "@angular/service-worker": "21.2.6",
         "date-fns": "^4.1.0",
-        "lodash-es": "~4.17.21",
+        "lodash-es": "~4.18.0",
         "rxjs": "~7.8.1",
         "tslib": "~2.8.1",
         "zone.js": "~0.16.0",
@@ -839,7 +839,7 @@
 
     "lmdb": ["lmdb@3.4.3", "", { "dependencies": { "msgpackr": "^1.11.2", "node-addon-api": "^6.1.0", "node-gyp-build-optional-packages": "5.2.2", "ordered-binary": "^1.5.3", "weak-lru-cache": "^1.2.2" }, "optionalDependencies": { "@lmdb/lmdb-darwin-arm64": "3.4.3", "@lmdb/lmdb-darwin-x64": "3.4.3", "@lmdb/lmdb-linux-arm": "3.4.3", "@lmdb/lmdb-linux-arm64": "3.4.3", "@lmdb/lmdb-linux-x64": "3.4.3", "@lmdb/lmdb-win32-arm64": "3.4.3", "@lmdb/lmdb-win32-x64": "3.4.3" }, "bin": { "download-lmdb-prebuilds": "bin/download-prebuilds.js" } }, "sha512-GWV1kVi6uhrXWqe+3NXWO73OYe8fto6q8JMo0HOpk1vf8nEyFWgo4CSNJpIFzsOxOrysVUlcO48qRbQfmKd1gA=="],
 
-    "lodash-es": ["lodash-es@4.17.21", "", {}, "sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw=="],
+    "lodash-es": ["lodash-es@4.18.1", "", {}, "sha512-J8xewKD/Gk22OZbhpOVSwcs60zhd95ESDwezOFuA3/099925PdHJ7OFHNTGtajL3AlZkykD32HykiMo+BIBI8A=="],
 
     "log-symbols": ["log-symbols@7.0.1", "", { "dependencies": { "is-unicode-supported": "^2.0.0", "yoctocolors": "^2.1.1" } }, "sha512-ja1E3yCr9i/0hmBVaM0bfwDjnGy8I/s6PP4DFp+yP+a+mrHO4Rm7DtmnqROTUkHIkqffC84YY7AeqX6oFk0WFg=="],
 
