@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ChangeDetectionStrategy} from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 
 import {BehaviorSubject} from 'rxjs';
@@ -28,6 +28,7 @@ const InitRepos: Repos = {
   selector: 'repo-selector',
   templateUrl: './repo-selector.component.html',
   styleUrls: ['./repo-selector.component.scss'],
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class RepoSelectorComponent implements OnInit {
