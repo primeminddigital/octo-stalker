@@ -1,4 +1,4 @@
-import {Component, Inject, ChangeDetectionStrategy} from '@angular/core';
+import {Component, Inject} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 
 export type Field = {
@@ -23,7 +23,6 @@ export type TemplateData = {
 @Component({
   selector: 'form-dialog',
   templateUrl: './form-dialog.component.html',
-  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class FormDialogComponent {

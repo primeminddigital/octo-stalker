@@ -1,4 +1,4 @@
-import {Component, OnInit, ChangeDetectionStrategy} from '@angular/core';
+import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 
 import {BehaviorSubject} from 'rxjs';
@@ -28,7 +28,6 @@ const InitRepos: Repos = {
   selector: 'repo-selector',
   templateUrl: './repo-selector.component.html',
   styleUrls: ['./repo-selector.component.scss'],
-  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class RepoSelectorComponent implements OnInit {
@@ -51,6 +50,7 @@ export class RepoSelectorComponent implements OnInit {
   constructor(
     private dialog: MatDialog,
     private http: HttpClient,
+    private cdr: ChangeDetectorRef,
   ) {}
 
   ngOnInit() {
@@ -99,6 +99,7 @@ export class RepoSelectorComponent implements OnInit {
           })
           .subscribe(({data}: GitHubResponse) => {
             this.repoInfo[owner][repo] = data.repository;
+            this.cdr.markForCheck();
           });
       });
     });
@@ -155,6 +156,7 @@ export class RepoSelectorComponent implements OnInit {
   save() {
     this.emitRepos();
     localStorage.setItem('repos', JSON.stringify(this._repos));
+    this.cdr.markForCheck();
   }
 
   export() {

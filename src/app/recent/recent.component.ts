@@ -6,7 +6,6 @@ import {
   ViewChild,
   TemplateRef,
   inject,
-  ChangeDetectionStrategy,
 } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {MatDialog} from '@angular/material/dialog';
@@ -24,7 +23,6 @@ const GitHubAppOAuthURL = 'https://github.com/login/oauth/authorize?client_id=bb
   selector: 'recent',
   templateUrl: './recent.component.html',
   styleUrls: ['./recent.component.css'],
-  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: false,
 })
 export class RecentComponent implements OnChanges {
