@@ -97,9 +97,12 @@ export class RepoSelectorComponent implements OnInit {
               }
             }`,
           })
-          .subscribe(({data}: GitHubResponse) => {
-            this.repoInfo[owner][repo] = data.repository;
-            this.cdr.markForCheck();
+          .subscribe({
+            next: ({data}: GitHubResponse) => {
+              this.repoInfo[owner][repo] = data.repository;
+              this.cdr.markForCheck();
+            },
+            error: error => console.error(`Failed to load ${owner}/${repo} info`, error),
           });
       });
     });
