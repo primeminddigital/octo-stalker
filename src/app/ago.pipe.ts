@@ -7,7 +7,7 @@ import {formatDistanceToNow, parseISO} from 'date-fns';
   standalone: false,
 })
 export class AgoPipe implements PipeTransform {
-  transform(value: string, args?: any): any {
+  transform(value: string): any {
     return formatDistanceToNow(parseISO(value), {addSuffix: true});
   }
 }
