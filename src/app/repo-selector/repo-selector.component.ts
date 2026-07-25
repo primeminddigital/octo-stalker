@@ -38,7 +38,7 @@ export class RepoSelectorComponent implements OnInit {
 
   repos = new BehaviorSubject<string[]>([]);
 
-  private _showRepos: boolean;
+  private _showRepos!: boolean;
   get showRepos() {
     return this._showRepos;
   }
@@ -84,7 +84,7 @@ export class RepoSelectorComponent implements OnInit {
         }
 
         this.http
-          .post('https://api.github.com/graphql', {
+          .post<GitHubResponse>('https://api.github.com/graphql', {
             query: `{
               repository(owner: "${owner}", name: "${repo}") {
                 pullRequests(states: OPEN) {

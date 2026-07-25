@@ -7,5 +7,5 @@ import {Component, Input} from '@angular/core';
   standalone: false,
 })
 export class RecentRepoComponent {
-  @Input() repoCommits: {key: string; value: any[]};
+  @Input() repoCommits!: {key: string; value: any[]};
 }

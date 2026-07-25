@@ -26,16 +26,16 @@ const GitHubAppOAuthURL = 'https://github.com/login/oauth/authorize?client_id=bb
   standalone: false,
 })
 export class RecentComponent implements OnChanges {
-  @Input() repos: string[];
-  @Input() sinceDaysAgo: number;
+  @Input() repos!: string[];
+  @Input() sinceDaysAgo!: number;
 
   @ViewChild('rateLimitError', {static: true})
-  rateLimitErrorTemplate: TemplateRef<any>;
+  rateLimitErrorTemplate!: TemplateRef<any>;
 
   @ViewChild('privateRepoError', {static: true})
-  privateRepoErrorTemplate: TemplateRef<any>;
+  privateRepoErrorTemplate!: TemplateRef<any>;
 
-  groups: Observable<{[dayDiff: number]: {[repo: string]: object[]}}>;
+  groups!: Observable<{[dayDiff: number]: {[repo: string]: object[]}}>;
 
   #http = inject(HttpClient);
   #dialog = inject(MatDialog);
@@ -49,7 +49,7 @@ export class RecentComponent implements OnChanges {
 
     this.groups = from(
       this.repos.map(repo =>
-        this.#http.get(`https://api.github.com/repos/${repo}/commits?since=${since}`).pipe(
+        this.#http.get<any[]>(`https://api.github.com/repos/${repo}/commits?since=${since}`).pipe(
           tap({
             error: error => {
               let template: TemplateRef<any>;

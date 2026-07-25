@@ -11,7 +11,7 @@ import {ConfirmDialogComponent} from './confirm-dialog/confirm-dialog.component'
 })
 export class ConfirmDirective {
   @Input() confirmContext: any = {};
-  @Input() confirmTemplate: TemplateRef<any>;
+  @Input() confirmTemplate!: TemplateRef<any>;
 
   @Output() confirm = new EventEmitter<void>();
   @Output() reject = new EventEmitter<void>();
