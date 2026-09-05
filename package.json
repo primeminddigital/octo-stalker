@@ -37,7 +37,7 @@
     "@angular/language-service": "22.1.5",
     "@types/lodash-es": "~4.17.12",
     "@types/node": "~26.1.0",
-    "oxfmt": "^0.60.0",
+    "oxfmt": "^0.66.0",
     "oxlint": "^1.75.0",
     "ts-node": "~10.9.2",
     "typescript": "~6.0.0",
